@@ -5,7 +5,7 @@ $flex-direction-values: row, row-reverse, column, column-reverse
 
 $flex-wrap-values: nowrap, wrap, wrap-reverse
 @each $value in $flex-wrap-values
-  .is-flex-wrap-#{$value}
+  .flex-#{$value}
     flex-wrap: $value !important
 
 // $justify-content-values: flex-start, flex-end, center, space-between, space-around, space-evenly, start, end, left, right

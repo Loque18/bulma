@@ -34,7 +34,7 @@
     "rimraf": "^3.0.2"
   },
   "scripts": {
-    "cbuild": "node-sass --output-style expanded --source-map true bulma.sass web/styles/bulma.css",
+    "cbuild": "node-sass --output-style expanded --source-map true bulma.sass web/src/styles/bulma.css",
     "build": "npm run build-sass && npm run build-autoprefix && npm run build-cleancss",
     "build-autoprefix": "postcss --use autoprefixer --map false --output css/bulma.css css/bulma.css",
     "build-cleancss": "cleancss -o css/bulma.min.css css/bulma.css",
