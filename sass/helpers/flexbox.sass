@@ -1,6 +1,6 @@
 $flex-direction-values: row, row-reverse, column, column-reverse
 @each $value in $flex-direction-values
-  .is-flex-direction-#{$value}
+  .flex-#{$value}
     flex-direction: $value !important
 
 $flex-wrap-values: nowrap, wrap, wrap-reverse
@@ -8,10 +8,14 @@ $flex-wrap-values: nowrap, wrap, wrap-reverse
   .is-flex-wrap-#{$value}
     flex-wrap: $value !important
 
-$justify-content-values: flex-start, flex-end, center, space-between, space-around, space-evenly, start, end, left, right
+// $justify-content-values: flex-start, flex-end, center, space-between, space-around, space-evenly, start, end, left, right
+
+// map 
+$justify-content-values: (fstart: flex-start, fend: flex-end, center: center, between: space-between, around: space-around, evenly: space-evenly, start: start, end: end, left: left, right: right)
+
 @each $value in $justify-content-values
-  .is-justify-content-#{$value}
-    justify-content: $value !important
+  .justify-content-#{nth($value, 1)}
+    justify-content: nth($value, 2) !important
 
 $align-content-values: flex-start, flex-end, center, space-between, space-around, space-evenly, stretch, start, end, baseline
 @each $value in $align-content-values
@@ -31,5 +35,5 @@ $align-self-values: auto, flex-start, flex-end, center, baseline, stretch
 $flex-operators: grow, shrink
 @each $operator in $flex-operators
   @for $i from 0 through 5
-    .is-flex-#{$operator}-#{$i}
+    .flex-#{$operator}-#{$i}
       flex-#{$operator}: $i !important
