@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import 'styles/bulma.css';
+import 'styles/bulma2.css';
 
 const themes = {
 	dark: 'dark',
