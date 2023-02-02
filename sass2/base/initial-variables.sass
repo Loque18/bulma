@@ -1,3 +1,5 @@
+@use "functions" as *
+    
 // Colors
 
 $black:        hsl(0, 0%, 4%) !default
@@ -23,6 +25,20 @@ $cyan:         hsl(207, 61%,  53%) !default
 $blue:         hsl(229, 53%,  53%) !default
 $purple:       hsl(271, 100%, 71%) !default
 $red:          hsl(348, 86%, 61%) !default
+
+
+
+
+// @debug 'orange' findDarkColor($orange)
+// @debug 'yellow' findDarkColor($yellow)
+// @debug 'green' findDarkColor($green)
+// @debug 'turquoise' findDarkColor($turquoise)
+// @debug 'cyan' findDarkColor($cyan)
+// @debug 'blue' findDarkColor($blue)
+// @debug 'purple' findDarkColor($purple)
+// @debug 'red' findDarkColor($red)
+
+
 
 // Typography
 
@@ -81,14 +97,45 @@ $speed: 86ms !default
 $variable-columns: true !default
 $rtl: false !default
 
-/* *~~*~~*~~ THEME *~~*~~*~~ */
-body
-    --text-color: #{$black}
-    --bg-color: #{$white}
 
-body.dark
-    --text-color: #{$white}
-    --bg-color: #{$black}
 
 
     
+/* NEW CODE, DELETE EVERYTHING ABOVE THIS LINE  ONCE YOU HAVE COMPLETED THE TASK */
+/* colors */
+
+$l-turquoise: #00d1b2
+$l-yellow: #ffdd57
+$l-green: #48c774
+$l-orange: #ff470f
+$l-cyan: #209cee
+$l-blue: #3273dc
+$l-purple: #b86bff
+$l-red: #f14668
+    
+$d-turquoise: #00947e
+$d-yellow: #946c00
+$d-green: #257953
+$d-orange: #d63200
+$d-cyan: #296fa8
+$d-blue: #3850b7
+$d-purple: #6700c7
+$d-red: #cc0f35
+
+
+$l-bg-color-0: #fafafa
+$l-bg-color-1: #e1e1e1
+$l-bg-color-2: #c8c8c8
+
+$d-bg-color-0: #161722
+$d-bg-color-1: #15161d
+$d-bg-color-2: #141419
+
+
+$l-text-color: #050505
+$l-text-color-inverted: #ffffff
+
+$d-text-color: #fafafa
+$d-text-color-inverted: #050505
+
+

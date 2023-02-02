@@ -1,7 +1,7 @@
-@import "../base/mixins"
+@use "../base/mixins"
 
-$box-color: $text !default
-$box-background-color: $scheme-main !default
+$box-color: var(--b-text) !default
+$box-background-color: var(--b-bg) !default
 $box-radius: $radius-large !default
 $box-shadow: $shadow !default
 $box-padding: 1.25rem !default
@@ -11,6 +11,7 @@ $box-link-active-shadow: inset 0 1px 2px rgba($scheme-invert, 0.2), 0 0 0 1px $l
 
 .box
   @extend %block
+  @extend %smoothed
   background-color: $box-background-color
   border-radius: $box-radius
   box-shadow: $box-shadow

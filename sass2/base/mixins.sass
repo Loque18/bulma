@@ -1,4 +1,4 @@
-@import "derived-variables"
+
 
 =clearfix
   &::after
@@ -301,3 +301,7 @@
   position: absolute
   right: $offset
   top: $offset
+
+
+=smoothed($property: all, $duration: 0.3s, $timing: ease-out)
+  transition: $property $duration $timing
