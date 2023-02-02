@@ -1,0 +1,225 @@
+@use "functions" as *;
+@use "sass:map";
+
+// Colors
+
+$black: hsl(0, 0%, 4%) !default;
+$black-bis: hsl(0, 0%, 7%) !default;
+$black-ter: hsl(0, 0%, 14%) !default;
+
+$grey-darker: hsl(0, 0%, 21%) !default;
+$grey-dark: hsl(0, 0%, 29%) !default;
+$grey: hsl(0, 0%, 48%) !default;
+$grey-light: hsl(0, 0%, 71%) !default;
+$grey-lighter: hsl(0, 0%, 86%) !default;
+$grey-lightest: hsl(0, 0%, 93%) !default;
+
+$white-ter: hsl(0, 0%, 96%) !default;
+$white-bis: hsl(0, 0%, 98%) !default;
+$white: hsl(0, 0%, 100%) !default;
+
+$orange: hsl(14, 100%, 53%) !default;
+$yellow: hsl(44, 100%, 77%) !default;
+$green: hsl(153, 53%, 53%) !default;
+$turquoise: hsl(171, 100%, 41%) !default;
+$cyan: hsl(207, 61%, 53%) !default;
+$blue: hsl(229, 53%, 53%) !default;
+$purple: hsl(271, 100%, 71%) !default;
+$red: hsl(348, 86%, 61%) !default;
+
+// @debug 'orange' findDarkColor($orange)
+// @debug 'yellow' findDarkColor($yellow)
+// @debug 'green' findDarkColor($green)
+// @debug 'turquoise' findDarkColor($turquoise)
+// @debug 'cyan' findDarkColor($cyan)
+// @debug 'blue' findDarkColor($blue)
+// @debug 'purple' findDarkColor($purple)
+// @debug 'red' findDarkColor($red)
+
+// Typography
+
+$family-sans-serif: BlinkMacSystemFont, -apple-system, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell",
+	"Fira Sans", "Droid Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif !default;
+$family-monospace: monospace !default;
+$render-mode: optimizeLegibility !default;
+
+// font sizes
+$size-1: 3rem !default;
+$size-2: 2.5rem !default;
+$size-3: 2rem !default;
+$size-4: 1.5rem !default;
+$size-5: 1.25rem !default;
+$size-6: 1rem !default;
+$size-7: 0.75rem !default;
+
+// font weights
+$weight-light: 300 !default;
+$weight-normal: 400 !default;
+$weight-medium: 500 !default;
+$weight-semibold: 600 !default;
+$weight-bold: 700 !default;
+
+// Spacing
+
+$block-spacing: 1.5rem !default;
+
+// Responsiveness
+
+// The container horizontal gap, which acts as the offset for breakpoints
+$gap: 32px !default;
+// 960, 1152, and 1344 have been chosen because they are divisible by both 12 and 16
+$tablet: 769px !default;
+// 960px container + 4rem
+$desktop: 960px + (2 * $gap) !default;
+// 1152px container + 4rem
+$widescreen: 1152px + (2 * $gap) !default;
+$widescreen-enabled: true !default;
+// 1344px container + 4rem
+$fullhd: 1344px + (2 * $gap) !default;
+$fullhd-enabled: true !default;
+$breakpoints: (
+	"mobile": (
+		"until": $tablet,
+	),
+	"tablet": (
+		"from": $tablet,
+	),
+	"tablet-only": (
+		"from": $tablet,
+		"until": $desktop,
+	),
+	"touch": (
+		"from": $desktop,
+	),
+	"desktop": (
+		"from": $desktop,
+	),
+	"desktop-only": (
+		"from": $desktop,
+		"until": $widescreen,
+	),
+	"until-widescreen": (
+		"until": $widescreen,
+	),
+	"widescreen": (
+		"from": $widescreen,
+	),
+	"widescreen-only": (
+		"from": $widescreen,
+		"until": $fullhd,
+	),
+	"until-fullhd": (
+		"until": $fullhd,
+	),
+	"fullhd": (
+		"from": $fullhd,
+	),
+) !default;
+
+// Miscellaneous
+
+$easing: ease-out !default;
+$radius-small: 2px !default;
+$radius: 4px !default;
+$radius-large: 6px !default;
+$radius-rounded: 9999px !default;
+$speed: 86ms !default;
+
+// Flags
+
+$variable-columns: true !default;
+$rtl: false !default;
+
+/* NEW CODE, DELETE EVERYTHING ABOVE THIS LINE  ONCE YOU HAVE COMPLETED THE TASK */
+/* colors */
+
+// light
+$l-turquoise: #00d1b2;
+$l-yellow: #ffdd57;
+$l-green: #48c774;
+$l-orange: #ff470f;
+$l-cyan: #209cee;
+$l-blue: #3273dc;
+$l-purple: #b86bff;
+$l-red: #f14668;
+
+$l-bg-color-0: #fafafa;
+$l-bg-color-1: #e1e1e1;
+$l-bg-color-2: #c8c8c8;
+
+$l-text-color: #050505;
+$l-text-color-inverted: #ffffff;
+
+// dark
+$d-turquoise: #00947e;
+$d-yellow: #946c00;
+$d-green: #257953;
+$d-orange: #d63200;
+$d-cyan: #296fa8;
+$d-blue: #3850b7;
+$d-purple: #6700c7;
+$d-red: #cc0f35;
+
+$d-bg-color-0: #161722;
+$d-bg-color-1: #15161d;
+$d-bg-color-2: #141419;
+
+$d-text-color: #fafafa;
+$d-text-color-inverted: #050505;
+
+$colors: (
+	"turquoise": (
+		"light": $l-turquoise,
+		"dark": $d-turquoise,
+	),
+	"yellow": (
+		"light": $l-yellow,
+		"dark": $d-yellow,
+	),
+	"green": (
+		"light": $l-green,
+		"dark": $d-green,
+	),
+	"orange": (
+		"light": $l-orange,
+		"dark": $d-orange,
+	),
+	"cyan": (
+		"light": $l-cyan,
+		"dark": $d-cyan,
+	),
+	"blue": (
+		"light": $l-blue,
+		"dark": $d-blue,
+	),
+	"purple": (
+		"light": $l-purple,
+		"dark": $d-purple,
+	),
+	"red": (
+		"light": $l-red,
+		"dark": $d-red,
+	),
+	"bg-color-0": (
+		"light": $l-bg-color-0,
+		"dark": $d-bg-color-0,
+	),
+	"bg-color-1": (
+		"light": $l-bg-color-1,
+		"dark": $d-bg-color-1,
+	),
+	"bg-color-2": (
+		"light": $l-bg-color-2,
+		"dark": $d-bg-color-2,
+	),
+	"text-color": (
+		"light": $l-text-color,
+		"dark": $d-text-color,
+	),
+	"text-color-inverted": (
+		"light": $l-text-color-inverted,
+		"dark": $d-text-color-inverted,
+	),
+);
+
+/* fonts */
