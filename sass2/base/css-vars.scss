@@ -6,6 +6,8 @@
 	--#{$name}: #{$value};
 }
 
+// theme
+
 body,
 body.light {
 	@each $colorName, $map in $colors {
@@ -16,6 +18,13 @@ body.light {
 body.dark {
 	@each $colorName, $map in $colors {
 		@include createCssVar($colorName, map-get($map, "dark"));
+	}
+}
+
+// typography
+body {
+	@each $typography-name, $map in $typography {
+		@include createCssVar($typography-name, map-get($map, "default"));
 	}
 }
 

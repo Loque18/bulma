@@ -1,5 +1,87 @@
+/*! minireset.css v0.0.6 | MIT License | github.com/jgthms/minireset.css */
+html,
+body,
+p,
+ol,
+ul,
+li,
+dl,
+dt,
+dd,
+blockquote,
+figure,
+fieldset,
+legend,
+textarea,
+pre,
+iframe,
+hr,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: 100%;
+  font-weight: normal;
+}
+
+ul {
+  list-style: none;
+}
+
+button,
+input,
+select,
+textarea {
+  margin: 0;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+img,
+video {
+  height: auto;
+  max-width: 100%;
+}
+
+iframe {
+  border: 0;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+td,
+th {
+  padding: 0;
+}
+td:not([align]),
+th:not([align]) {
+  text-align: inherit;
+}
+
 /* NEW CODE, DELETE EVERYTHING ABOVE THIS LINE  ONCE YOU HAVE COMPLETED THE TASK */
-/* colors */
+/* *~~*~~*~~ COLORS *~~*~~*~~ */
+/* *~~*~~*~~ TYPOGRAPHY *~~*~~*~~ */
 body,
 body.light {
   --turquoise: #00d1b2;
@@ -31,6 +113,83 @@ body.dark {
   --bg-color-2: #141419;
   --text-color: #fafafa;
   --text-color-inverted: #050505;
+}
+
+body {
+  --primary-family: BlinkMacSystemFont, -apple-system, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, Helvetica, Arial, sans-serif;
+  --secondary-family: BlinkMacSystemFont, -apple-system, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, Helvetica, Arial, sans-serif;
+  --code-family: monospace;
+}
+
+article,
+aside,
+figure,
+footer,
+header,
+hgroup,
+section {
+  display: block;
+}
+
+body,
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: var(--primary-family);
+}
+
+/**
+* interface Pattern {
+*   scale: number;
+*   lineHeight: number;
+*   letterSpacing: number;
+*   fontWeight: number;
+* }
+*/
+.defFont {
+  font-family: var(--primary-family);
+}
+
+.defFont.d1 {
+  font-size: 2.985984rem;
+}
+
+.defFont.d2 {
+  font-size: 2.48832rem;
+}
+
+.defFont.h1 {
+  font-size: 2.0736rem;
+}
+
+.defFont.h2 {
+  font-size: 1.728rem;
+}
+
+.defFont.h3 {
+  font-size: 1.44rem;
+}
+
+.defFont.h4 {
+  font-size: 1.2rem;
+}
+
+.defFont.h5 {
+  font-size: 1rem;
+}
+
+.defFont.b {
+  font-size: 1rem;
+}
+
+.defFont.s {
+  font-size: 0.8333333333rem;
+}
+
+.defFont.xs {
+  font-size: 0.6944444444rem;
 }
 
 .box:not(:last-child) {

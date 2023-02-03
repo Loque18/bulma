@@ -1,5 +1,6 @@
-@use "functions" as *;
 @use "sass:map";
+
+@use "functions" as *;
 
 // Colors
 
@@ -37,11 +38,6 @@ $red: hsl(348, 86%, 61%) !default;
 // @debug 'red' findDarkColor($red)
 
 // Typography
-
-$family-sans-serif: BlinkMacSystemFont, -apple-system, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell",
-	"Fira Sans", "Droid Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif !default;
-$family-monospace: monospace !default;
-$render-mode: optimizeLegibility !default;
 
 // font sizes
 $size-1: 3rem !default;
@@ -131,7 +127,7 @@ $variable-columns: true !default;
 $rtl: false !default;
 
 /* NEW CODE, DELETE EVERYTHING ABOVE THIS LINE  ONCE YOU HAVE COMPLETED THE TASK */
-/* colors */
+/* *~~*~~*~~ COLORS *~~*~~*~~ */
 
 // light
 $l-turquoise: #00d1b2;
@@ -166,6 +162,11 @@ $d-bg-color-2: #141419;
 
 $d-text-color: #fafafa;
 $d-text-color-inverted: #050505;
+
+$themesNames: (
+	"light": "light",
+	"dark": "dark",
+) !default;
 
 $colors: (
 	"turquoise": (
@@ -222,4 +223,21 @@ $colors: (
 	),
 );
 
-/* fonts */
+/* *~~*~~*~~ TYPOGRAPHY *~~*~~*~~ */
+
+$family-sans-serif: BlinkMacSystemFont, -apple-system, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell",
+	"Fira Sans", "Droid Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif !default;
+$family-monospace: monospace !default;
+$render-mode: optimizeLegibility !default;
+
+$typography: (
+	"primary-family": (
+		"default": $family-sans-serif,
+	),
+	"secondary-family": (
+		"default": $family-sans-serif,
+	),
+	"code-family": (
+		"default": $family-monospace,
+	),
+);

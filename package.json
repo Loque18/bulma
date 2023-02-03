@@ -40,7 +40,7 @@
 		"build": "npm run build-sass && npm run build-autoprefix && npm run build-cleancss",
 		"build-autoprefix": "postcss --use autoprefixer --map false --output css/bulma.css css/bulma.css",
 		"build-cleancss": "cleancss -o css/bulma.min.css css/bulma.css",
-		"build-sass": "node-sass --output-style expanded --source-map true bulma.sass css/bulma.css",
+		"build-sass": "sass --style expanded --source-map bulma.sass web/src/styles/bulma.css",
 		"clean": "rimraf css",
 		"rtl": "npm run rtl-sass && npm run rtl-autoprefix && npm run rtl-cleancss",
 		"rtl-sass": "node-sass --output-style expanded --source-map true bulma-rtl.sass css/bulma-rtl.css",

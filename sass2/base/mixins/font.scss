@@ -1,0 +1,113 @@
+@use "sass:map";
+@use "sass:math";
+
+@use "../derived-variables" as devVars;
+
+$scales: (
+	"minor-second": 1.067,
+	"major-second": 1.125,
+	"minor-third": 1.2,
+	"major-third": 1.25,
+	"perfect-fourth": 1.333,
+	"augmented-fourth": 1.414,
+	"perfect-fifth": 1.5,
+	"minor-sixth": 1.6,
+	"golden-ratio": 1.618,
+	"major-sixth": 1.667,
+	"minor-seventh": 1.778,
+	"major-seventh": 1.875,
+	"octave": 2,
+	"major-tenth": 2.5,
+	"major-eleventh": 2.667,
+	"major-twelfth": 3,
+	"double-octave": 4,
+);
+
+/**
+* interface Pattern {
+*   scale: number;
+*   lineHeight: number;
+*   letterSpacing: number;
+*   fontWeight: number;
+* }
+*/
+
+$default-patterns: (
+	"d1": (
+		"scale": 6,
+	),
+	"d2": (
+		"scale": 5,
+	),
+	"h1": (
+		"scale": 4,
+	),
+	"h2": (
+		"scale": 3,
+	),
+
+	"h3": (
+		"scale": 2,
+	),
+	"h4": (
+		"scale": 1,
+	),
+	"h5": (
+		"scale": 0,
+	),
+	"b": (
+		"scale": 0,
+	),
+	"s": (
+		"scale": -1,
+	),
+	"xs": (
+		"scale": -2,
+	),
+);
+
+// $default-patterns: ();
+
+$def-base-size: 16px;
+$def-base-scale-multiplier: map.get($scales, "minor-third");
+
+@mixin generateFontTokens(
+	$fontName,
+	$family,
+	$patterns,
+	$base-font-size: $def-base-size,
+	$scale-multiplier: $def-scale-multiplier
+) {
+	$font-class-name: "#{$fontName}";
+
+	.#{$font-class-name} {
+		font-family: $family;
+	}
+
+	@each $pattern-name, $values in $patterns {
+		$patternScale: map.get($values, "scale");
+
+		$font-size: math.pow($scale-multiplier, $patternScale);
+
+		.#{$font-class-name}.#{$pattern-name} {
+			font-size: #{$font-size}rem;
+		}
+		// font-family: $family;
+		// font-size: $font-size;
+		// line-height:
+
+		// --#{$patternName}-font-family: #{$family};
+		// --#{$patternName}-font-size: #{$font-size};
+		// --#{$patternName}-line-height: #{$line-height};
+		// --#{$patternName}-letter-spacing: #{$letter-spacing};
+		// --#{$patternName}-font-weight: #{$font-weight};
+	}
+}
+
+@include generateFontTokens(
+	"defFont",
+	devVars.$family-primary,
+	$default-patterns,
+	$def-base-size,
+	$def-base-scale-multiplier
+);
